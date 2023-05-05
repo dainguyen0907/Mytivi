@@ -1,6 +1,5 @@
 <main class="dash-content">
     <div class="container-fluid">
-        <h1 class="dash-title">Trang chủ / Tài khoản</h1>
         <div class="row">
             <div class="col-lg-12">
                 <div class="card easion-card">

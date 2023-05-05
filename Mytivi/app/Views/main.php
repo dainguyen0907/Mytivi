@@ -9,12 +9,14 @@
     <title>
         <?= $title ?>
     </title>
+    <link rel="stylesheet" 
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css"
         integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Nunito:400,600|Open+Sans:400,600,700" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/easion.css">
     <?php foreach ($cssLib as $cssLink): ?>
-        <link rel="stylesheet" href="<?php $cssLink ?>">
+        <link rel="stylesheet" href="<?php echo $cssLink ?>">
     <?php endforeach ?>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.bundle.min.js"></script>
     <script src="assets/js/chart-js-config.js"></script>
@@ -39,7 +41,7 @@
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
     <?php foreach ($jsLib as $jsLink): ?>
-        <script src="<?php $jsLink ?>"></script>
+        <script src="<?php echo $jsLink ?>"></script>
     <?php endforeach ?>
     <script src="assets/js/easion.js"></script>
 </body>

@@ -3,7 +3,7 @@
                 <a href="javascript::void()" class="menu-toggle">
                     <i class="fas fa-bars"></i>
                 </a>
-                <a href="index.html" class="easion-logo"><i class="fas fa-sun"></i> <span>Appfast</span></a>
+                <a href="index.html" class="easion-logo"><i class="fa-solid fa-tv"></i> <span>Mytivi</span></a>
             </header>
             <nav class="dash-nav-list">
                 <a href="#" class="dash-nav-item">
@@ -12,7 +12,7 @@
                     <a href="javascript::void(0)" class="dash-nav-item dash-nav-dropdown-toggle">
                         <i class="fas fa-users"></i> Tài khoản </a>
                     <div class="dash-nav-dropdown-menu">
-                        <a href="user-list.html" class="dash-nav-dropdown-item">Danh sách</a>
+                        <a href=<?=base_url()."admin/user"?> class="dash-nav-dropdown-item">Danh sách</a>
                         <a href="user-add.html" class="dash-nav-dropdown-item">Thêm mới</a>
                     </div>
                 </div>
