@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 08, 2023 at 10:32 AM
+-- Generation Time: May 08, 2023 at 10:39 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -80,6 +80,27 @@ CREATE TABLE `schedule` (
   `priority` int(11) NOT NULL DEFAULT 3
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `user`
+--
+
+CREATE TABLE `user` (
+  `user_id` int(11) NOT NULL,
+  `user_name` varchar(100) NOT NULL,
+  `user_email` varchar(200) NOT NULL,
+  `user_password` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `user`
+--
+
+INSERT INTO `user` (`user_id`, `user_name`, `user_email`, `user_password`) VALUES
+(1, 'admin', '', 'Hepc@0554'),
+(2, 'dainq.hepc', 'dainq.hepc@evnspc.vn', 'Hepc@0554');
+
 --
 -- Indexes for dumped tables
 --
@@ -108,6 +129,14 @@ ALTER TABLE `schedule`
   ADD KEY `id_program` (`id_program`);
 
 --
+-- Indexes for table `user`
+--
+ALTER TABLE `user`
+  ADD PRIMARY KEY (`user_id`),
+  ADD UNIQUE KEY `user_email` (`user_email`),
+  ADD UNIQUE KEY `user_name` (`user_name`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -128,6 +157,12 @@ ALTER TABLE `programs`
 --
 ALTER TABLE `schedule`
   MODIFY `id_schedule` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `user`
+--
+ALTER TABLE `user`
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- Constraints for dumped tables
