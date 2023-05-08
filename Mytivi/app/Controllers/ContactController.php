@@ -9,7 +9,8 @@ class ContactController extends BaseController
         $data=[];
         $cssLib=[];
         $jsLib=[];
-        $data=$this->loadMasterLayout($data,'Liên hệ','pages/contact',$cssLib,$jsLib);
+        $dataLayout=[];
+        $data=$this->loadMasterLayout($data,'Liên hệ','pages/contact',$dataLayout,$cssLib,$jsLib);
         return view('main',$data);
     }
 }

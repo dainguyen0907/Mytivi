@@ -14,10 +14,9 @@
                         <thead>
                             <tr>
                                 <th scope="col">id</th>
-                                <th scope="col">Người bình luận</th>
-                                <th scope="col">Địa chỉ</th>
-                                <th scope="col">Hình đại diện</th>
-                                <th scope="col">Nội dung</th>
+                                <th scope="col">Tên chương trình</th>
+                                <th scope="col">Thể loại</th>
+                                <th scope="col">Đường dẫn</th>
                                 <th scope="col">Chức năng</th>
                             </tr>
                         </thead>
@@ -26,9 +25,6 @@
                                 <td>id</td>
                                 <td>name</td>
                                 <td>address</td>
-                                <td class="text-center">
-                                    <img src="" alt="">
-                                </td>
                                 <td>content</td>
                                 <td class="text-center">
                                     <a href="comment-edit.html" class="btn btn-primary"><i class="fas fa-edit"></i></a>

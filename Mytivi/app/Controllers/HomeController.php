@@ -9,7 +9,8 @@ class HomeController extends BaseController
         $data=[];
         $cssLib=[];
         $jsLib=[];
-        $data=$this->loadMasterLayout($data,'Trang chủ','pages/index',$cssLib,$jsLib);
+        $dataLayout=[];
+        $data=$this->loadMasterLayout($data,'Trang chủ','pages/index',$dataLayout,$cssLib,$jsLib);
         return view('main',$data);
     }
 }

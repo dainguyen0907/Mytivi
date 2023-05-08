@@ -14,46 +14,27 @@
                             <thead>
                                 <tr>
                                     <th scope="col">id</th>
-                                    <th scope="col">Tên</th>
+                                    <th scope="col">Tài khoản</th>
                                     <th scope="col">Email</th>
-                                    <th scope="col">Quyền</th>
                                     <th scope="col">Chức năng</th>
                                 </tr>
                             </thead>
                             <tbody>
+                                <?php foreach ($users as $user):?>
                                 <tr>
-                                    <td>id 1 </td>
-                                    <td>name 1</td>
-                                    <td>email 1</td>
-                                    <td>role 1</td>
+                                    <td><?= $user["user_id"]?></td>
+                                    <td><?= $user["user_name"]?></td>
+                                    <td><?= $user["user_email"]?></td>
                                     <td class="text-center">
                                         <a href="user-edit.html" class="btn btn-primary"><i class="fas fa-edit"></i></a>
-                                        <a data-url="" class="btn btn-danger btn-del-confirm"><i
-                                                class="far fa-trash-alt"></i></a>
+                                        <?php if($user["user_id"]!=1)
+                                        {
+                                            echo '<a data-url="" class="btn btn-danger btn-del-confirm"><i
+                                            class="far fa-trash-alt"></i></a>';
+                                        }?>
                                     </td>
                                 </tr>
-                                <tr>
-                                    <td>id 2 </td>
-                                    <td>name 2</td>
-                                    <td>email 2</td>
-                                    <td>role 2</td>
-                                    <td class="text-center">
-                                        <a href="user-edit.html" class="btn btn-primary"><i class="fas fa-edit"></i></a>
-                                        <a data-url="" class="btn btn-danger btn-del-confirm"><i
-                                                class="far fa-trash-alt"></i></a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>id 3</td>
-                                    <td>name 3</td>
-                                    <td>email 3</td>
-                                    <td>role 3</td>
-                                    <td class="text-center">
-                                        <a href="user-edit.html" class="btn btn-primary"><i class="fas fa-edit"></i></a>
-                                        <a data-url="" class="btn btn-danger btn-del-confirm"><i
-                                                class="far fa-trash-alt"></i></a>
-                                    </td>
-                                </tr>
+                                <?php endforeach?>
                             </tbody>
                         </table>
                     </div>
@@ -62,7 +43,3 @@
         </div>
     </div>
 </main>
-
-</body>
-
-</html>

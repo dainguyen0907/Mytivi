@@ -57,12 +57,12 @@ abstract class BaseController extends Controller
     }
 
     //Master page
-    public function loadMasterLayout($data, $title,$content,$cssLib,$jsLib)
+    public function loadMasterLayout($data, $title,$content,$dataLayout,$cssLib,$jsLib)
     {
         $data['title']=$title;
         $data['leftMenu']=view("layout/leftMenu");
         $data['header']=view("layout/header");
-        $data['content']=view($content);
+        $data['content']=view($content,$dataLayout);
         $data['cssLib']=$cssLib;
         $data['jsLib']=$jsLib;
         return $data;
