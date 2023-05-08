@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 05, 2023 at 08:16 AM
+-- Generation Time: May 08, 2023 at 10:32 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -38,7 +38,10 @@ CREATE TABLE `catalogue` (
 
 INSERT INTO `catalogue` (`id_catalogue`, `name_catalogue`) VALUES
 (1, 'Bảng tin'),
-(2, 'Lịch học');
+(2, 'Lịch học'),
+(4, 'Giới thiệu'),
+(5, 'Quảng cáo'),
+(6, 'Khác');
 
 -- --------------------------------------------------------
 
@@ -59,9 +62,9 @@ CREATE TABLE `programs` (
 
 INSERT INTO `programs` (`id_program`, `id_catalogue`, `name_program`, `link_program`) VALUES
 (1, 2, 'Lịch học từ 24/4/2023 đến 28/4/2023', NULL),
-(2, 1, 'Giới thiệu EVN', NULL),
-(3, 1, 'Tiết kiệm điện', NULL),
-(4, 1, 'Giới thiệu cao đẳng điện lực', NULL);
+(2, 4, 'Giới thiệu EVN', NULL),
+(3, 5, 'Tiết kiệm điện', NULL),
+(4, 4, 'Giới thiệu cao đẳng điện lực', NULL);
 
 -- --------------------------------------------------------
 
@@ -73,7 +76,8 @@ CREATE TABLE `schedule` (
   `id_schedule` int(11) NOT NULL,
   `id_program` int(11) NOT NULL,
   `time_start` time NOT NULL DEFAULT current_timestamp(),
-  `time_end` time NOT NULL DEFAULT current_timestamp()
+  `time_end` time NOT NULL DEFAULT current_timestamp(),
+  `priority` int(11) NOT NULL DEFAULT 3
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
@@ -111,7 +115,7 @@ ALTER TABLE `schedule`
 -- AUTO_INCREMENT for table `catalogue`
 --
 ALTER TABLE `catalogue`
-  MODIFY `id_catalogue` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_catalogue` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `programs`
