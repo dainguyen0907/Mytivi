@@ -128,3 +128,64 @@ in APPPATH\Controllers\BaseController.php on line 60.
  3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\HomeController))
  4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
  5 FCPATH\index.php(68): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-05-08 12:34:06 --> join() expects at most 2 arguments, 3 given
+in APPPATH\Services\ProgramService.php on line 20.
+ 1 APPPATH\Services\ProgramService.php(20): join([...], 'id_catalogue=id_catalogue', 'left')
+ 2 APPPATH\Controllers\ProgramController.php(20): App\Services\ProgramService->getAllProgram()
+ 3 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\ProgramController->index()
+ 4 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProgramController))
+ 5 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(68): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-05-08 12:34:25 --> join(): Argument #2 ($array) must be of type ?array, string given
+in APPPATH\Services\ProgramService.php on line 20.
+ 1 APPPATH\Services\ProgramService.php(20): join([...], 'id_catalogue=id_catalogue')
+ 2 APPPATH\Controllers\ProgramController.php(20): App\Services\ProgramService->getAllProgram()
+ 3 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\ProgramController->index()
+ 4 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProgramController))
+ 5 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(68): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-05-08 12:35:25 --> join(): Argument #2 ($array) must be of type ?array, string given
+in APPPATH\Services\ProgramService.php on line 20.
+ 1 APPPATH\Services\ProgramService.php(20): join([...], 'program.id_catalogue=catalogue.id_catalogue')
+ 2 APPPATH\Controllers\ProgramController.php(20): App\Services\ProgramService->getAllProgram()
+ 3 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\ProgramController->index()
+ 4 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProgramController))
+ 5 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(68): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-05-08 12:39:22 --> Call to undefined method App\Models\ProgramModel::finAll
+in SYSTEMPATH\Model.php on line 842.
+ 1 APPPATH\Services\ProgramService.php(20): CodeIgniter\Model->__call('finAll', [])
+ 2 APPPATH\Controllers\ProgramController.php(20): App\Services\ProgramService->getAllProgram()
+ 3 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\ProgramController->index()
+ 4 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProgramController))
+ 5 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(68): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-05-08 12:39:35 --> join(): Argument #1 ($separator) must be of type string, array given
+in APPPATH\Services\ProgramService.php on line 22.
+ 1 APPPATH\Services\ProgramService.php(22): join([...], [...])
+ 2 APPPATH\Controllers\ProgramController.php(20): App\Services\ProgramService->getAllProgram()
+ 3 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\ProgramController->index()
+ 4 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProgramController))
+ 5 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(68): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-05-08 12:44:19 --> CodeIgniter\Database\BaseBuilder::join(): Argument #1 ($table) must be of type string, App\Models\CatalogueModel given, called in C:\xampp\htdocs\Mytivi\system\Model.php on line 840
+in SYSTEMPATH\Database\BaseBuilder.php on line 617.
+ 1 SYSTEMPATH\Model.php(840): CodeIgniter\Database\BaseBuilder->join(Object(App\Models\CatalogueModel), 'programs.id_catalogue=catalogue.id_catalogue')
+ 2 APPPATH\Services\ProgramService.php(20): CodeIgniter\Model->__call('join', [...])
+ 3 APPPATH\Controllers\ProgramController.php(20): App\Services\ProgramService->getAllProgram()
+ 4 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\ProgramController->index()
+ 5 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProgramController))
+ 6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(68): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-05-08 12:57:28 --> Undefined variable $schedules
+in APPPATH\Views\pages\schedule-list.php on line 26.
+ 1 APPPATH\Views\pages\schedule-list.php(26): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $schedules', 'C:\\xampp\\htdocs\\Mytivi\\app\\Views\\pages\\schedule-list.php', 26)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\Mytivi\\app\\Views\\pages\\schedule-list.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('pages/schedule-list', [], true)
+ 5 APPPATH\Controllers\BaseController.php(65): view('pages/schedule-list', [...])
+ 6 APPPATH\Controllers\ScheduleController.php(18): App\Controllers\BaseController->loadMasterLayout([...], 'Lịch chiếu', 'pages/schedule-list', [...], [...], [...])
+ 7 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\ScheduleController->index()
+ 8 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ScheduleController))
+ 9 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(68): CodeIgniter\CodeIgniter->run()
