@@ -30,6 +30,12 @@ $routes->set404Override();
 $routes->group('admin', function($routes){
     $routes->get('/', 'HomeController::index');
     $routes->get('user', 'UserController::index');
+    $routes->get('user/add', 'UserController::addPage');
+    $routes->get('contact', 'ContactController::index');
+    $routes->get('program', 'ProgramController::index');
+    $routes->get('program/add', 'ProgramController::addPage');
+    $routes->get('schedule', 'ScheduleController::index');
+    $routes->get('schedule/add', 'ScheduleController::addPage');
 });
 
 /*

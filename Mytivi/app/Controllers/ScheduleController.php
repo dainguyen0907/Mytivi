@@ -2,25 +2,24 @@
 
 namespace App\Controllers;
 
-class UserController extends BaseController
+class ScheduleController extends BaseController
 {
-
     public function index()
     {
-        $data = [];
+        $data=[];
         $cssLib = ["https://cdn.datatables.net/1.10.22/css/jquery.dataTables.min.css",];
         $jsLib = ["http://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js", base_url() . "/assets/js/dataTable.js"];
-        $data = $this->loadMasterLayout($data, 'Tài khoản', 'pages/user-list', $cssLib, $jsLib);
-        return view('main', $data);
+        $data=$this->loadMasterLayout($data,'Lịch chiếu','pages/schedule-list',$cssLib,$jsLib);
+        return view('main',$data);
     }
 
-    //Show page add user
+     //Show page add schedule
     public function addPage()
     {
         $data = [];
         $cssLib = [];
         $jsLib = [];
-        $data = $this->loadMasterLayout($data, 'Thêm tài khoản', 'pages/user-add', $cssLib, $jsLib);
+        $data = $this->loadMasterLayout($data, 'Thêm lịch chiếu mới', 'pages/schedule-add', $cssLib, $jsLib);
         return view('main', $data);
     }
 }
