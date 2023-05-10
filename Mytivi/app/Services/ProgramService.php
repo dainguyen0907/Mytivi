@@ -14,7 +14,7 @@ class ProgramService extends BaseService
 
     function getAllProgram()
     {
-        return $this->program->findAll();
+        return $this->program->join('catalogue','programs.id_catalogue=catalogue.id_catalogue')->findAll();
     }
     
 }
