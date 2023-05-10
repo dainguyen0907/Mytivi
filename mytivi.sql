@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 08, 2023 at 10:39 AM
+-- Generation Time: May 10, 2023 at 02:55 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -20,6 +20,54 @@ SET time_zone = "+00:00";
 --
 -- Database: `mytivi`
 --
+
+DELIMITER $$
+--
+-- Procedures
+--
+CREATE DEFINER=`root`@`localhost` PROCEDURE `LayLink` (IN `id_schedules` INT(11))   BEGIN
+	SELECT link_program 
+    from programs pro, schedule sch 
+    WHERE pro.id_program=sch.id_program and sch.id_schedule=id_schedules;
+END$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sua_user` (IN `user_ids` INT(50), IN `user_names` VARCHAR(50))   BEGIN
+	UPDATE user
+    SET user_name=user_names where user_id=user_ids;
+END$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `them_user` (IN `user_names` VARCHAR(50), IN `user_passwords` VARCHAR(50), IN `user_emails` VARCHAR(50))   BEGIN
+	DECLARE isExists int DEFAULT -1;
+    SELECT COUNT(*) INTO isExists FROM user where user_name=user_names OR user_email=user_emails;
+    
+    IF (isExists > 0) THEN
+      	SELECT 'Tài khoản hoặc mail đã tồn tại !';
+    ELSE
+        INSERT INTO user(user_name,user_password,user_email)
+    	VALUES(user_names,user_passwords,user_emails);
+    	IF(row_count()>0) THEN	
+    		SELECT 'Đã đăng ký thành công !';
+    	ELSE
+    		SELECT 'SOMETHING WRONG !!!';
+    	END IF;
+    END IF;
+END$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `user_login` (IN `pr_username` VARCHAR(50), IN `pr_password` VARCHAR(50))   BEGIN	
+    
+    DECLARE isExists INT DEFAULT -1;  
+
+    SELECT COUNT(*) INTO isExists FROM user WHERE user_name=pr_username AND user_password=pr_password;
+    
+    IF(isExists >0) THEN
+        SELECT 'Đăng nhập thành công !';
+    ELSE
+	SELECT 'Tên đăng nhập hoặc mật khẩu không đúng !';
+    END IF;
+    
+END$$
+
+DELIMITER ;
 
 -- --------------------------------------------------------
 
@@ -162,7 +210,7 @@ ALTER TABLE `schedule`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 
 --
 -- Constraints for dumped tables
