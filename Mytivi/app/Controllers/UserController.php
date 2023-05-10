@@ -33,4 +33,10 @@ class UserController extends BaseController
         $data = $this->loadMasterLayout($data, 'Thêm tài khoản', 'pages/user-add',$dataLayout, $cssLib, $jsLib);
         return view('main', $data);
     }
+
+    public function create()
+    {
+        $result= $this->service->addUserInfo($this->request);
+        return redirect()->back()->withInput()->with($result['messageCode'],$result['messages']);
+    }
 }

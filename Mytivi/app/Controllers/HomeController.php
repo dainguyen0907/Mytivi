@@ -13,4 +13,8 @@ class HomeController extends BaseController
         $data=$this->loadMasterLayout($data,'Trang chủ','pages/index',$dataLayout,$cssLib,$jsLib);
         return view('main',$data);
     }
+    public function login()
+    {
+        return view('login');
+    }
 }

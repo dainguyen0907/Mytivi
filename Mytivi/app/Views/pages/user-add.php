@@ -3,6 +3,7 @@
         <h1 class="dash-title">Thêm mới tài khoản</h1>
         <div class="row">
             <div class="col-xl-12">
+                <?= view('message/message')?>
                 <div class="card easion-card">
                     <div class="card-header">
                         <div class="easion-card-icon">
@@ -12,23 +13,17 @@
                     </div>
                     <div class="card-body ">
                         <form action="admin/user/create" method="post">
-                            <div class="form-row">
-                                <div class="form-group col-md-8">
-                                    <label for="inputEmai">Email</label>
-                                    <input name="email" type="email" class="form-control" id="inputEmai"
-                                        placeholder="Email" required>
-                                </div>
-                                <div class="form-group col-md-4">
-                                    <label for="inputState">Quyền</label>
-                                    <select name="role" id="inputState" class="form-control" required>
-                                        <option selected>ADMIN</option>
-                                    </select>
-                                </div>
-                            </div>
+
                             <div class="form-group">
-                                <label for="inputAddress">Tên hiển thị</label>
-                                <input name="name" type="text" class="form-control" id="inputAddress"
-                                    placeholder="Tên hiển thị người dùng" required>
+                                <label for="inputEmai">Email</label>
+                                <input name="email" type="email" value="<?php if(session('errorsMsg')) {echo old('email');} ?>" class="form-control" id="inputEmai" placeholder="Email"
+                                    required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="inputAddress">Tên đăng nhập</label>
+                                <input name="account" type="text" class="form-control" value="<?php if(session('errorsMsg')) {echo old('account');} ?>" id="inputAddress"
+                                    placeholder="Tên đăng nhập" required>
                             </div>
                             <div class="form-row">
                                 <div class="form-group col-md-6">

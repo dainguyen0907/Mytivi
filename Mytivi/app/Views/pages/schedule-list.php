@@ -1,5 +1,4 @@
 <main class="dash-content">
-    <h1 class="dash-title">Lịch chiếu</h1>
     <div class="row">
         <div class="col-lg-12">
             <div class="card easion-card">

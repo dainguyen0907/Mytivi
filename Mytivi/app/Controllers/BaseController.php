@@ -67,4 +67,5 @@ abstract class BaseController extends Controller
         $data['jsLib']=$jsLib;
         return $data;
     }
+
 }

@@ -7,6 +7,7 @@ $(document).ready(function () {
             "info": "Hiển thị trang _PAGE_ trên _PAGES_ trang",
             "infoEmpty": "Không có dữ liệu",
             "search": "Tìm kiếm: ",
+            "infoFiltered": "(Lọc từ _MAX_ kết quả)",
             paginate: {
                 previous: '‹',
                 next: '›'
