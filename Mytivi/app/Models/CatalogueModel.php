@@ -7,4 +7,5 @@ use CodeIgniter\Model;
 class CatalogueModel extends Model
 {
     protected $table="catalogue";
+    protected $primaryKey="id_catalogue";
 }

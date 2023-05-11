@@ -33,6 +33,8 @@ $routes->group('admin', function($routes){
     $routes->get('user', 'UserController::index');
     $routes->get('user/add', 'UserController::addPage');
     $routes->post('user/create', 'UserController::create');
+    $routes->post('user/update', 'UserController::update');
+    $routes->post('user/delete', 'UserController::delete');
     $routes->get('contact', 'ContactController::index');
     $routes->get('program', 'ProgramController::index');
     $routes->get('program/add', 'ProgramController::addPage');

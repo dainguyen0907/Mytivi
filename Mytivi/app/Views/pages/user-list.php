@@ -9,6 +9,7 @@
                         </div>
                         <div class="easion-card-title">Danh sách tài khoản</div>
                     </div>
+                    <?= view("message/message")?>
                     <div class="card-body ">
                         <table id="datatable" class="cell-border">
                             <thead>
@@ -26,10 +27,10 @@
                                     <td><?= $user["user_name"]?></td>
                                     <td><?= $user["user_email"]?></td>
                                     <td class="text-center">
-                                        <a href="user-edit.html" class="btn btn-primary"><i class="fas fa-edit"></i></a>
+                                        <a href="user-edit.html" class="btn btn-primary" data-toggle="modal" data-target="#updateUserModal" data-iduser="<?= $user["user_id"]?>"><i class="fas fa-edit"></i></a>
                                         <?php if($user["user_id"]!=1)
                                         {
-                                            echo '<a data-url="" class="btn btn-danger btn-del-confirm"><i
+                                            echo '<a data-url="" class="btn btn-danger btn-del-confirm text-light" data-toggle="modal" data-target="#deleteUserModal" data-iduser="'.$user["user_id"].'"><i
                                             class="far fa-trash-alt"></i></a>';
                                         }?>
                                     </td>
@@ -43,3 +44,5 @@
         </div>
     </div>
 </main>
+<?= view('popups/updateUser') ?>
+<?= view('popups/deleteUser') ?>

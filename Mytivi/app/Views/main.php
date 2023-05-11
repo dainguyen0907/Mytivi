@@ -43,6 +43,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     <?php foreach ($jsLib as $jsLink): ?>
         <script src="<?php echo $jsLink ?>"></script>
     <?php endforeach ?>
+    <script src="assets/js/popup.js"></script>
     <script src="assets/js/easion.js"></script>
 </body>
 

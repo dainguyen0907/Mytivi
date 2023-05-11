@@ -39,4 +39,16 @@ class UserController extends BaseController
         $result= $this->service->addUserInfo($this->request);
         return redirect()->back()->withInput()->with($result['messageCode'],$result['messages']);
     }
+
+    public function update()
+    {
+        $result= $this->service->updateUserPass($this->request);
+        return redirect()->back()->withInput()->with($result['messageCode'],$result['messages']);
+    }
+
+    public function delete()
+    {
+        $result= $this->service->deleteUser($this->request);
+        return redirect()->back()->withInput()->with($result['messageCode'],$result['messages']);
+    }
 }

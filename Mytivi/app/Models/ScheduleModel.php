@@ -7,4 +7,6 @@ use CodeIgniter\Model;
 class ScheduleModel extends Model
 {
     protected $table="schedule";
+
+    protected $primaryKey="id_schedule";
 }
