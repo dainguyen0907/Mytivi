@@ -159,7 +159,7 @@ class UserService extends BaseService
     {
         try {
             $dataSave = $rqData->getPost();
-            $this->user->where('user_id',$dataSave['id'])->delete();
+            $this->user->where('user_id', $dataSave['id'])->delete();
             return [
                 'status' => ResultUtils::STATUS_CODE_OK,
                 'messageCode' => ResultUtils::MESSAGE_CODE_OK,
@@ -173,6 +173,71 @@ class UserService extends BaseService
             ];
         }
 
+    }
+
+    /**
+     * Đăng nhập
+     */
+
+    function checkLogin($rqData)
+    {
+        $validate = $this->validateLogin($rqData);
+
+        if ($validate->getErrors()) {
+            return [
+                'status' => ResultUtils::STATUS_CODE_ERR,
+                'messageCode' => ResultUtils::MESSAGE_CODE_ERR,
+                'messages' => $validate->getErrors()
+            ];
+        }
+        $param=$rqData->getPost();
+        $result= $this->user->where('user_name',$param['account'])->first();
+        if($result)
+        {
+            if(!password_verify($param['password'],$result['user_password']))
+            {
+                return [
+                    'status' => ResultUtils::STATUS_CODE_ERR,
+                    'messageCode' => ResultUtils::MESSAGE_CODE_ERR,
+                    'messages' => ['wrongPass' => 'Mật khẩu chưa chính xác']
+                ];
+            }
+            session()->set('userSession',$result);
+            return [
+                'status' => ResultUtils::STATUS_CODE_OK,
+                'messageCode' => ResultUtils::MESSAGE_CODE_OK,
+                'messages' => ['success' => 'Đăng nhập thành công']
+            ];
+        }
+        return [
+            'status' => ResultUtils::STATUS_CODE_ERR,
+            'messageCode' => ResultUtils::MESSAGE_CODE_ERR,
+            'messages' => ['notFoundAccount' => 'Không tìm thấy tài khoản']
+        ];
+
+
+    }
+
+    function validateLogin($rqData)
+    {
+        $rule = [
+            'account' => 'required',
+            'password' => 'required'
+        ];
+
+        $message = [
+            'account' => [
+                'required' => 'Hãy nhập tài khoản.'
+            ],
+            'password' => [
+                'required' => 'Hãy nhập mật khẩu.',
+            ]
+        ];
+
+        $this->validation->setRules($rule, $message);
+        $this->validation->withRequest($rqData)->run();
+
+        return $this->validation;
     }
 
 }

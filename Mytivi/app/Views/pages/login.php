@@ -18,17 +18,23 @@
         <a href="index.html" class="easion-logo"><i class="fas fa-sun"></i> <span>Easion</span></a>
         <div class="card account-dialog">
             <div class="card-header bg-primary text-white"> Please sign in </div>
-            <?= view('message/message')?>
             <div class="card-body">
-                <form action="login" method="post">
+                <form action="/login" method="post">
                     <div class="form-group">
-                        <input name="account" type="text" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+                        <input name="account" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
                     </div>
                     <div class="form-group">
                         <input name="password" type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
                     </div>
+                    <div class="form-group">
+                        <div class="custom-control custom-checkbox">
+                            <input type="checkbox" class="custom-control-input" id="customCheck1">
+                            <label class="custom-control-label" for="customCheck1">Remember me</label>
+                        </div>
+                    </div>
                     <div class="account-dialog-actions">
                         <button type="submit" class="btn btn-primary">Sign in</button>
+                        <a class="account-dialog-link" href="signup.html">Create a new account</a>
                     </div>
                 </form>
             </div>
