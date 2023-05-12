@@ -1,0 +1,143 @@
+CRITICAL - 2023-05-12 02:28:31 --> Assignments can only happen to writable values
+in APPPATH\Controllers\ProgramController.php on line 34.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2023-05-12 04:22:04 --> Invalid max_size parameter: "200"
+in SYSTEMPATH\Validation\FileRules.php on line 88.
+ 1 SYSTEMPATH\Validation\Validation.php(312): CodeIgniter\Validation\FileRules->max_size(null, '200', [...], null, 'video')
+ 2 SYSTEMPATH\Validation\Validation.php(170): CodeIgniter\Validation\Validation->processRules('video', 'video', null, [...], [...])
+ 3 APPPATH\Services\ProgramService.php(89): CodeIgniter\Validation\Validation->run()
+ 4 APPPATH\Services\ProgramService.php(25): App\Services\ProgramService->validateProgramInfo(Object(CodeIgniter\HTTP\IncomingRequest))
+ 5 APPPATH\Controllers\ProgramController.php(41): App\Services\ProgramService->createProgram(Object(CodeIgniter\HTTP\IncomingRequest))
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\ProgramController->create()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProgramController))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(68): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-05-12 04:22:55 --> Invalid max_size parameter: "200"
+in SYSTEMPATH\Validation\FileRules.php on line 88.
+ 1 SYSTEMPATH\Validation\Validation.php(312): CodeIgniter\Validation\FileRules->max_size(null, '200', [...], null, 'video')
+ 2 SYSTEMPATH\Validation\Validation.php(170): CodeIgniter\Validation\Validation->processRules('video', 'video', null, [...], [...])
+ 3 APPPATH\Services\ProgramService.php(89): CodeIgniter\Validation\Validation->run()
+ 4 APPPATH\Services\ProgramService.php(25): App\Services\ProgramService->validateProgramInfo(Object(CodeIgniter\HTTP\IncomingRequest))
+ 5 APPPATH\Controllers\ProgramController.php(41): App\Services\ProgramService->createProgram(Object(CodeIgniter\HTTP\IncomingRequest))
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\ProgramController->create()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProgramController))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(68): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-05-12 04:23:17 --> foreach() argument must be of type array|object, string given
+in APPPATH\Views\message\message.php on line 2.
+ 1 APPPATH\Views\message\message.php(2): CodeIgniter\Debug\Exceptions->errorHandler(2, 'foreach() argument must be of type array|object, string given', 'C:\\xampp\\htdocs\\Mytivi\\app\\Views\\message\\message.php', 2)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\Mytivi\\app\\Views\\message\\message.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('message/message', [], true)
+ 5 APPPATH\Views\pages\program-add.php(14): view('message/message')
+ 6 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\Mytivi\\app\\Views\\pages\\program-add.php')
+ 7 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('pages/program-add', [], true)
+ 9 APPPATH\Controllers\BaseController.php(65): view('pages/program-add', [...])
+10 APPPATH\Controllers\ProgramController.php(35): App\Controllers\BaseController->loadMasterLayout([...], 'Thêm chương trình mới', 'pages/program-add', [...], [], [])
+11 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\ProgramController->addPage()
+12 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProgramController))
+13 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+14 FCPATH\index.php(68): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-05-12 04:24:52 --> foreach() argument must be of type array|object, string given
+in APPPATH\Views\message\message.php on line 2.
+ 1 APPPATH\Views\message\message.php(2): CodeIgniter\Debug\Exceptions->errorHandler(2, 'foreach() argument must be of type array|object, string given', 'C:\\xampp\\htdocs\\Mytivi\\app\\Views\\message\\message.php', 2)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\Mytivi\\app\\Views\\message\\message.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('message/message', [], true)
+ 5 APPPATH\Views\pages\program-add.php(14): view('message/message')
+ 6 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\Mytivi\\app\\Views\\pages\\program-add.php')
+ 7 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('pages/program-add', [], true)
+ 9 APPPATH\Controllers\BaseController.php(65): view('pages/program-add', [...])
+10 APPPATH\Controllers\ProgramController.php(35): App\Controllers\BaseController->loadMasterLayout([...], 'Thêm chương trình mới', 'pages/program-add', [...], [], [])
+11 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\ProgramController->addPage()
+12 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProgramController))
+13 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+14 FCPATH\index.php(68): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-05-12 04:29:45 --> Call to a member function store() on string
+in APPPATH\Services\ProgramService.php on line 45.
+ 1 APPPATH\Controllers\ProgramController.php(41): App\Services\ProgramService->createProgram(Object(CodeIgniter\HTTP\IncomingRequest))
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\ProgramController->create()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProgramController))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(68): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-05-12 04:30:22 --> Call to a member function store() on string
+in APPPATH\Services\ProgramService.php on line 45.
+ 1 APPPATH\Controllers\ProgramController.php(41): App\Services\ProgramService->createProgram(Object(CodeIgniter\HTTP\IncomingRequest))
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\ProgramController->create()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProgramController))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(68): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-05-12 04:30:29 --> Call to a member function store() on string
+in APPPATH\Services\ProgramService.php on line 45.
+ 1 APPPATH\Controllers\ProgramController.php(41): App\Services\ProgramService->createProgram(Object(CodeIgniter\HTTP\IncomingRequest))
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\ProgramController->create()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProgramController))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(68): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-05-12 05:50:46 --> Call to a member function store() on string
+in APPPATH\Services\ProgramService.php on line 45.
+ 1 APPPATH\Controllers\ProgramController.php(41): App\Services\ProgramService->createProgram(Object(CodeIgniter\HTTP\IncomingRequest))
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\ProgramController->create()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProgramController))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(68): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-05-12 05:52:04 --> Call to a member function hasMoved() on string
+in APPPATH\Services\ProgramService.php on line 44.
+ 1 APPPATH\Controllers\ProgramController.php(41): App\Services\ProgramService->createProgram(Object(CodeIgniter\HTTP\IncomingRequest))
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\ProgramController->create()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProgramController))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(68): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-05-12 07:30:12 --> "is_video" is not a valid rule.
+in SYSTEMPATH\Validation\Validation.php on line 320.
+ 1 SYSTEMPATH\Validation\Validation.php(320): CodeIgniter\Validation\Exceptions\ValidationException::forRuleNotFound('is_video')
+ 2 SYSTEMPATH\Validation\Validation.php(170): CodeIgniter\Validation\Validation->processRules('video', 'video', null, [...], [...])
+ 3 APPPATH\Services\ProgramService.php(89): CodeIgniter\Validation\Validation->run()
+ 4 APPPATH\Services\ProgramService.php(25): App\Services\ProgramService->validateProgramInfo(Object(CodeIgniter\HTTP\IncomingRequest))
+ 5 APPPATH\Controllers\ProgramController.php(41): App\Services\ProgramService->createProgram(Object(CodeIgniter\HTTP\IncomingRequest))
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\ProgramController->create()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProgramController))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(68): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-05-12 07:32:44 --> "is_video" is not a valid rule.
+in SYSTEMPATH\Validation\Validation.php on line 320.
+ 1 SYSTEMPATH\Validation\Validation.php(320): CodeIgniter\Validation\Exceptions\ValidationException::forRuleNotFound('is_video')
+ 2 SYSTEMPATH\Validation\Validation.php(170): CodeIgniter\Validation\Validation->processRules('video', 'video', null, [...], [...])
+ 3 APPPATH\Services\ProgramService.php(89): CodeIgniter\Validation\Validation->run()
+ 4 APPPATH\Services\ProgramService.php(25): App\Services\ProgramService->validateProgramInfo(Object(CodeIgniter\HTTP\IncomingRequest))
+ 5 APPPATH\Controllers\ProgramController.php(41): App\Services\ProgramService->createProgram(Object(CodeIgniter\HTTP\IncomingRequest))
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\ProgramController->create()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProgramController))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(68): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-05-12 07:33:44 --> CodeIgniter\Validation\FileRules::is_image(): Argument #2 ($params) must be of type string, null given, called in C:\xampp\htdocs\Mytivi\system\Validation\Validation.php on line 311
+in SYSTEMPATH\Validation\FileRules.php on line 121.
+ 1 SYSTEMPATH\Validation\Validation.php(311): CodeIgniter\Validation\FileRules->is_image(null, null)
+ 2 SYSTEMPATH\Validation\Validation.php(170): CodeIgniter\Validation\Validation->processRules('video', 'video', null, [...], [...])
+ 3 APPPATH\Services\ProgramService.php(89): CodeIgniter\Validation\Validation->run()
+ 4 APPPATH\Services\ProgramService.php(25): App\Services\ProgramService->validateProgramInfo(Object(CodeIgniter\HTTP\IncomingRequest))
+ 5 APPPATH\Controllers\ProgramController.php(41): App\Services\ProgramService->createProgram(Object(CodeIgniter\HTTP\IncomingRequest))
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\ProgramController->create()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProgramController))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(68): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-05-12 08:35:13 --> The route for "user" cannot be found.
+in SYSTEMPATH\HTTP\RedirectResponse.php on line 60.
+ 1 SYSTEMPATH\HTTP\RedirectResponse.php(60): CodeIgniter\HTTP\Exceptions\HTTPException::forInvalidRedirectRoute('user')
+ 2 SYSTEMPATH\Common.php(880): CodeIgniter\HTTP\RedirectResponse->route(false)
+ 3 APPPATH\Controllers\UserController.php(43): redirect('user')
+ 4 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\UserController->create()
+ 5 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+ 6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(68): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-05-12 08:36:06 --> The route for "user" cannot be found.
+in SYSTEMPATH\HTTP\RedirectResponse.php on line 60.
+ 1 SYSTEMPATH\HTTP\RedirectResponse.php(60): CodeIgniter\HTTP\Exceptions\HTTPException::forInvalidRedirectRoute('user')
+ 2 SYSTEMPATH\Common.php(880): CodeIgniter\HTTP\RedirectResponse->route(false)
+ 3 APPPATH\Controllers\UserController.php(43): redirect('user')
+ 4 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\UserController->create()
+ 5 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+ 6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(68): CodeIgniter\CodeIgniter->run()

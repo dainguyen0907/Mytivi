@@ -20,18 +20,26 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <?php foreach ($programs as $program):?>
-                            <tr>
-                                <td><?= $program["id_program"]?></td>
-                                <td><?= $program["name_program"]?></td>
-                                <td><?= $program["name_catalogue"]?></td>
-                                <td><?= $program["link_program"]?></td>
-                                <td class="text-center">
-                                    <a href="comment-edit.html" class="btn btn-primary"><i class="fas fa-edit"></i></a>
-                                    <a data-url="" class="btn btn-danger btn-del-confirm"><i
-                                            class="far fa-trash-alt"></i></a>
-                                </td>
-                            </tr>
+                            <?php foreach ($programs as $program): ?>
+                                <tr>
+                                    <td>
+                                        <?= $program["id_program"] ?>
+                                    </td>
+                                    <td>
+                                        <?= $program["name_program"] ?>
+                                    </td>
+                                    <td>
+                                        <?= $program["name_catalogue"] ?>
+                                    </td>
+                                    <td>
+                                        <?= $program["link_program"] ?>
+                                    </td>
+                                    <td class="text-center">
+                                        <a href="comment-edit.html" class="btn btn-primary"><i class="fas fa-edit"></i></a>
+                                        <a data-url="" class="btn btn-danger btn-del-confirm"><i
+                                                class="far fa-trash-alt"></i></a>
+                                    </td>
+                                </tr>
                             <?php endforeach; ?>
                         </tbody>
                     </table>

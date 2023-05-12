@@ -12,9 +12,13 @@ class CatalogueService extends BaseService
     }
 
 
+    function getAllCatalogue()
+    {
+        return $this->catalogue->findAll();
+    }
     function getCatalogue($id)
     {
-        return $this->catalogue->find($id);
+        return $this->catalogue->find($id)->first();
     }
     
 }

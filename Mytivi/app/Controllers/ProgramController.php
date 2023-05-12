@@ -2,15 +2,19 @@
 
 namespace App\Controllers;
 
+use App\Common\ResultUtils;
+use App\Services\CatalogueService;
 use App\Services\ProgramService;
 
 class ProgramController extends BaseController
 {
     private $programs;
+    private $catalogueService;
 
     function __construct()
     {
         $this->programs=new ProgramService();
+        $this->catalogueService=new CatalogueService();
     }
     public function index()
     {
@@ -28,8 +32,20 @@ class ProgramController extends BaseController
         $data = [];
         $cssLib = [];
         $jsLib = [];
-        $dataLayout=[];
+        $dataLayout["catalogues"]=$this->catalogueService->getAllCatalogue();
         $data = $this->loadMasterLayout($data, 'Thêm chương trình mới', 'pages/program-add',$dataLayout, $cssLib, $jsLib);
         return view('main', $data);
     }
+
+    public function create()
+    {
+        $result=$this->programs->createProgram($this->request);
+        if($result['status']===ResultUtils::STATUS_CODE_OK)
+        {
+            return redirect("program")->withInput()->with($result['messageCode'],$result['messages']);
+        }
+        return redirect()->back()->withInput()->with($result['messageCode'],$result['messages']);
+    }
+
+
 }

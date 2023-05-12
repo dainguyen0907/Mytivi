@@ -8,14 +8,10 @@
     <nav class="dash-nav-list">
         <a href="<?= base_url() . "admin" ?>" class="dash-nav-item">
             <i class="fas fa-home"></i> Thống kê </a>
-        <div class="dash-nav-dropdown">
-            <a href="javascript::void(0)" class="dash-nav-item dash-nav-dropdown-toggle">
-                <i class="fas fa-users"></i> Tài khoản </a>
-            <div class="dash-nav-dropdown-menu">
-                <a href=<?= base_url() . "admin/user" ?> class="dash-nav-dropdown-item">Danh sách</a>
-                <a href="<?= base_url() . "admin/user/add" ?>" class="dash-nav-dropdown-item">Thêm mới</a>
-            </div>
-        </div>
+        <?php if (session('userSession')['user_id'] == 1): ?>
+            <?= view ('layout/adminControl')?>
+        <?php endif; ?>
+
         <div class="dash-nav-dropdown">
             <a href="javascript::void(0)" class="dash-nav-item dash-nav-dropdown-toggle">
                 <i class="fas fa-cube"></i> Chương trình </a>

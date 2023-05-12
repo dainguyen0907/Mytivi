@@ -17,18 +17,18 @@
     <div class="form-screen">
         <a href="index.html" class="easion-logo"><i class="fas fa-sun"></i> <span>Easion</span></a>
         <div class="card account-dialog">
-            <div class="card-header bg-primary text-white"> Please sign in </div>
+            <div class="card-header bg-primary text-white"> ĐĂNG NHẬP </div>
             <?= view('message/message')?>
-            <div class="card-body">
+            <div class="card-body ">
                 <form action="login" method="post">
                     <div class="form-group">
-                        <input name="account" type="text" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+                        <input name="account" type="text" class="form-control" id="exampleInputEmail1" placeholder="Tên đăng nhập">
                     </div>
                     <div class="form-group">
-                        <input name="password" type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                        <input name="password" type="password" class="form-control" id="exampleInputPassword1" placeholder="Mật khẩu">
                     </div>
-                    <div class="account-dialog-actions">
-                        <button type="submit" class="btn btn-primary">Sign in</button>
+                    <div class="account-dialog-actions justify-content-center">
+                        <button type="submit" class="btn btn-primary">Đăng nhập</button>
                     </div>
                 </form>
             </div>

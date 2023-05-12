@@ -8,37 +8,31 @@
                         <div class="easion-card-icon">
                             <i class="fas fa-chart-bar"></i>
                         </div>
-                        <div class="easion-card-title"> Thông tin đánh giá</div>
+                        <div class="easion-card-title"> Thông tin chương trình</div>
                     </div>
                     <div class="card-body ">
-                        <form action="admin/comment/create" method="post" enctype="multipart/form-data">
-                            <input name="id" hidden>
+                        <?= view('message/message');?>
+                        <form action="admin/program/create" method="post" enctype="multipart/form-data">
                             <div class="form-row">
                                 <div class="form-group col-md-6">
-                                    <label>Tên gói</label>
-                                    <input name="name" type="text" class="form-control"
-                                        placeholder="Nhập tên người đánh giá" required>
+                                    <label>Tên chương trình</label>
+                                    <input name="name_program" type="text" class="form-control"
+                                        placeholder="Nhập tên chương trình" required>
                                 </div>
                                 <div class="form-group col-md-6">
-                                    <label>Địa chỉ</label>
-                                    <input name="address" type="text" class="form-control" placeholder="Nhập địa chỉ"
-                                        required>
+                                    <label>Thể loại</label>
+                                    <select name="id_catalogue"class="form-select" aria-label="Default select example">
+                                        <?php foreach($catalogues as $cata):?>
+                                        <option value="<?= $cata['id_catalogue']?>"><?= $cata['name_catalogue']?></option>
+                                        <?php endforeach;?>
+                                    </select>
                                 </div>
                             </div>
-                            <div class="form-row">
-                                <div class="form-group col-md-12">
-                                    <label>Nội dung</label>
-                                    <textarea name="content" class="form-control" rows="3"
-                                        placeholder="Nhập nội dung đánh giá" required>content</textarea>
-                                </div>
-                            </div>
+    
                             <div class="form-group">
-                                <label for="input-choose-image">Hình đại diện</label>
-                                <input name="img" type="file" accept="image/*" class="form-control-file"
-                                    id="input-choose-image" required>
-                            </div>
-                            <div class="form-group">
-                                <img id="img-show" src="" class="img-fluid" alt="Hình đại diện." style="display: none;">
+                                <label for="input-choose-video">File chương trình (Lưu ý: Không vượt quá 200mb)</label>
+                                <input name="video" type="file" accept="video/*" class="form-control-file"
+                                    id="input-choose-video" required size="200">
                             </div>
                             <button type="submit" class="btn btn-success">Đăng ký</button>
                             <button type="reset" class="btn btn-secondary">Nhập lại</button>

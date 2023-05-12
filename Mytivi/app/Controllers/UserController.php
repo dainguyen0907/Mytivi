@@ -2,6 +2,7 @@
 
 namespace App\Controllers;
 
+use App\Common\ResultUtils;
 use App\Services\UserService;
 
 class UserController extends BaseController
@@ -37,6 +38,10 @@ class UserController extends BaseController
     public function create()
     {
         $result= $this->service->addUserInfo($this->request);
+        if($result['status']===ResultUtils::STATUS_CODE_OK)
+        {
+            return redirect()->to('admin/user')->withInput()->with($result['messageCode'],$result['messages']);
+        }
         return redirect()->back()->withInput()->with($result['messageCode'],$result['messages']);
     }
 
