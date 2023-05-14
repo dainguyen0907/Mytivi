@@ -42,8 +42,14 @@ class ProgramController extends BaseController
         $result=$this->programs->createProgram($this->request);
         if($result['status']===ResultUtils::STATUS_CODE_OK)
         {
-            return redirect("program")->withInput()->with($result['messageCode'],$result['messages']);
+            return redirect("admin/program")->withInput()->with($result['messageCode'],$result['messages']);
         }
+        return redirect()->back()->withInput()->with($result['messageCode'],$result['messages']);
+    }
+
+    public function delete()
+    {
+        $result=$this->programs->deleteProgram($this->request);
         return redirect()->back()->withInput()->with($result['messageCode'],$result['messages']);
     }
 

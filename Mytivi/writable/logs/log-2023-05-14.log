@@ -1,0 +1,83 @@
+ERROR - 2023-05-14 12:55:30 --> Error connecting to the database: mysqli_sql_exception: No connection could be made because the target machine actively refused it in C:\xampp\htdocs\Mytivi\system\Database\MySQLi\Connection.php:173
+Stack trace:
+#0 C:\xampp\htdocs\Mytivi\system\Database\MySQLi\Connection.php(173): mysqli->real_connect('localhost', 'root', Object(SensitiveParameterValue), 'Mytivi', 3306, '', 0)
+#1 C:\xampp\htdocs\Mytivi\system\Database\BaseConnection.php(391): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\xampp\htdocs\Mytivi\system\Database\BaseConnection.php(573): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\xampp\htdocs\Mytivi\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\Mytivi\system\Model.php(268): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\Mytivi\system\BaseModel.php(656): CodeIgniter\Model->doFirst()
+#6 C:\xampp\htdocs\Mytivi\app\Services\UserService.php(194): CodeIgniter\BaseModel->first()
+#7 C:\xampp\htdocs\Mytivi\app\Controllers\LoginController.php(27): App\Services\UserService->checkLogin(Object(CodeIgniter\HTTP\IncomingRequest))
+#8 C:\xampp\htdocs\Mytivi\system\CodeIgniter.php(934): App\Controllers\LoginController->login()
+#9 C:\xampp\htdocs\Mytivi\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LoginController))
+#10 C:\xampp\htdocs\Mytivi\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\Mytivi\public\index.php(68): CodeIgniter\CodeIgniter->run()
+#12 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: No connection could be made because the target machine actively refused it in C:\xampp\htdocs\Mytivi\system\Database\MySQLi\Connection.php:218
+Stack trace:
+#0 C:\xampp\htdocs\Mytivi\system\Database\BaseConnection.php(391): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\xampp\htdocs\Mytivi\system\Database\BaseConnection.php(573): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\xampp\htdocs\Mytivi\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 C:\xampp\htdocs\Mytivi\system\Model.php(268): CodeIgniter\Database\BaseBuilder->get()
+#4 C:\xampp\htdocs\Mytivi\system\BaseModel.php(656): CodeIgniter\Model->doFirst()
+#5 C:\xampp\htdocs\Mytivi\app\Services\UserService.php(194): CodeIgniter\BaseModel->first()
+#6 C:\xampp\htdocs\Mytivi\app\Controllers\LoginController.php(27): App\Services\UserService->checkLogin(Object(CodeIgniter\HTTP\IncomingRequest))
+#7 C:\xampp\htdocs\Mytivi\system\CodeIgniter.php(934): App\Controllers\LoginController->login()
+#8 C:\xampp\htdocs\Mytivi\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LoginController))
+#9 C:\xampp\htdocs\Mytivi\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\Mytivi\public\index.php(68): CodeIgniter\CodeIgniter->run()
+#11 {main}
+CRITICAL - 2023-05-14 12:55:30 --> Unable to connect to the database.
+Main connection [MySQLi]: No connection could be made because the target machine actively refused it
+in SYSTEMPATH\Database\BaseConnection.php on line 427.
+ 1 SYSTEMPATH\Database\BaseConnection.php(573): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `user`
+WHERE `user_name` = :user_name:
+ LIMIT 1', [...], false)
+ 3 SYSTEMPATH\Model.php(268): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\BaseModel.php(656): CodeIgniter\Model->doFirst()
+ 5 APPPATH\Services\UserService.php(194): CodeIgniter\BaseModel->first()
+ 6 APPPATH\Controllers\LoginController.php(27): App\Services\UserService->checkLogin(Object(CodeIgniter\HTTP\IncomingRequest))
+ 7 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\LoginController->login()
+ 8 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LoginController))
+ 9 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(68): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-05-14 12:57:51 --> The route for "program" cannot be found.
+in SYSTEMPATH\HTTP\RedirectResponse.php on line 60.
+ 1 SYSTEMPATH\HTTP\RedirectResponse.php(60): CodeIgniter\HTTP\Exceptions\HTTPException::forInvalidRedirectRoute('program')
+ 2 SYSTEMPATH\Common.php(880): CodeIgniter\HTTP\RedirectResponse->route(false)
+ 3 APPPATH\Controllers\ProgramController.php(45): redirect('program')
+ 4 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\ProgramController->create()
+ 5 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProgramController))
+ 6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(68): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-05-14 13:19:12 --> Invalid file: "popup/deleteProgram.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 33.
+ 1 SYSTEMPATH\View\View.php(201): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('popup/deleteProgram.php')
+ 2 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('popup/deleteProgram', [], true)
+ 3 APPPATH\Views\pages\program-list.php(51): view('popup/deleteProgram')
+ 4 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\Mytivi\\app\\Views\\pages\\program-list.php')
+ 5 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 6 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('pages/program-list', [], true)
+ 7 APPPATH\Controllers\BaseController.php(65): view('pages/program-list', [...])
+ 8 APPPATH\Controllers\ProgramController.php(25): App\Controllers\BaseController->loadMasterLayout([...], 'Chương trình', 'pages/program-list', [...], [...], [...])
+ 9 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\ProgramController->index()
+10 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProgramController))
+11 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 FCPATH\index.php(68): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-05-14 13:50:54 --> Undefined array key "message"
+in APPPATH\Controllers\ProgramController.php on line 53.
+ 1 APPPATH\Controllers\ProgramController.php(53): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "message"', 'C:\\xampp\\htdocs\\Mytivi\\app\\Controllers\\ProgramController.php', 53)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\ProgramController->delete()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProgramController))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(68): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-05-14 14:40:52 --> Trying to access array offset on value of type null
+in APPPATH\Controllers\ProgramController.php on line 53.
+ 1 APPPATH\Controllers\ProgramController.php(53): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'C:\\xampp\\htdocs\\Mytivi\\app\\Controllers\\ProgramController.php', 53)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\ProgramController->delete()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProgramController))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(68): CodeIgniter\CodeIgniter->run()

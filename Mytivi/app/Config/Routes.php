@@ -41,6 +41,7 @@ $routes->group('admin',  ['filter' => 'adminFilter'],function($routes){
     $routes->get('program', 'ProgramController::index');
     $routes->post('program/create', 'ProgramController::create');
     $routes->get('program/add', 'ProgramController::addPage');
+    $routes->post('program/delete', 'ProgramController::delete');
     $routes->get('schedule', 'ScheduleController::index');
     $routes->get('schedule/add', 'ScheduleController::addPage');
 });
