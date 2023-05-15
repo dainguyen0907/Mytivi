@@ -22,6 +22,7 @@ class ProgramController extends BaseController
         $cssLib = ["https://cdn.datatables.net/1.10.22/css/jquery.dataTables.min.css",];
         $jsLib = ["http://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js", base_url() . "/assets/js/dataTable.js"];
         $dataLayout["programs"]=$this->programs->getAllProgram();
+        $dataLayout["catalogues"]=$this->catalogueService->getAllCatalogue();
         $data=$this->loadMasterLayout($data,'Chương trình','pages/program-list',$dataLayout,$cssLib,$jsLib);
         return view('main',$data);
     }
@@ -50,6 +51,11 @@ class ProgramController extends BaseController
     public function delete()
     {
         $result=$this->programs->deleteProgram($this->request);
+        return redirect()->back()->withInput()->with($result['messageCode'],$result['messages']);
+    }
+    public function update()
+    {
+        $result=$this->programs->updateProgram($this->request);
         return redirect()->back()->withInput()->with($result['messageCode'],$result['messages']);
     }
 

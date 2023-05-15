@@ -28,6 +28,26 @@
                                     </select>
                                 </div>
                             </div>
+                            <div class="form-row">
+                                <div class="form-group col-md-4">
+                                    <label>Thời gian bắt đầu</label>
+                                    <input name="time_start" type="time" class="form-control"
+                                        placeholder="Thời gian bắt đầu" required>
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <label>Thời gian kết thúc</label>
+                                    <input name="time_end" type="time" class="form-control"
+                                        placeholder="Thời gian kết thúc" required>
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <label>Độ ưu tiên</label>
+                                    <select name="priority"class="form-select" aria-label="Default select example">
+                                        <option value='1'>Cao nhất</option>
+                                        <option value='2'>Trung bình</option>
+                                        <option value='3'>Thấp</option>
+                                    </select>
+                                </div>
+                            </div>
     
                             <div class="form-group">
                                 <label for="input-choose-video">File chương trình (Lưu ý: Không vượt quá 200mb)</label>

@@ -1,0 +1,61 @@
+CRITICAL - 2023-05-15 00:53:07 --> Undefined variable $catalogues
+in APPPATH\Views\popups\updateProgram.php on line 23.
+ 1 APPPATH\Views\popups\updateProgram.php(23): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $catalogues', 'C:\\xampp\\htdocs\\Mytivi\\app\\Views\\popups\\updateProgram.php', 23)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\Mytivi\\app\\Views\\popups\\updateProgram.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('popups/updateProgram', [], true)
+ 5 APPPATH\Views\pages\program-list.php(53): view('popups/updateProgram')
+ 6 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\Mytivi\\app\\Views\\pages\\program-list.php')
+ 7 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('pages/program-list', [], true)
+ 9 APPPATH\Controllers\BaseController.php(65): view('pages/program-list', [...])
+10 APPPATH\Controllers\ProgramController.php(25): App\Controllers\BaseController->loadMasterLayout([...], 'Chương trình', 'pages/program-list', [...], [...], [...])
+11 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\ProgramController->index()
+12 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProgramController))
+13 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+14 FCPATH\index.php(68): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-05-15 01:51:25 --> "" is not a valid rule.
+in SYSTEMPATH\Validation\Validation.php on line 320.
+ 1 SYSTEMPATH\Validation\Validation.php(320): CodeIgniter\Validation\Exceptions\ValidationException::forRuleNotFound('')
+ 2 SYSTEMPATH\Validation\Validation.php(170): CodeIgniter\Validation\Validation->processRules('id_program', 'id_program', '1', [...], [...])
+ 3 APPPATH\Services\ProgramService.php(137): CodeIgniter\Validation\Validation->run()
+ 4 APPPATH\Services\ProgramService.php(70): App\Services\ProgramService->validateProgramInfo(Object(CodeIgniter\HTTP\IncomingRequest))
+ 5 APPPATH\Controllers\ProgramController.php(58): App\Services\ProgramService->updateProgram(Object(CodeIgniter\HTTP\IncomingRequest))
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\ProgramController->update()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProgramController))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(68): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-05-15 02:18:36 --> Cannot use object of type CodeIgniter\HTTP\IncomingRequest as array
+in APPPATH\Services\ProgramService.php on line 157.
+ 1 APPPATH\Services\ProgramService.php(97): App\Services\ProgramService->validateProgramUpdate(Object(CodeIgniter\HTTP\IncomingRequest))
+ 2 APPPATH\Controllers\ProgramController.php(58): App\Services\ProgramService->updateProgram(Object(CodeIgniter\HTTP\IncomingRequest))
+ 3 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\ProgramController->update()
+ 4 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProgramController))
+ 5 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(68): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-05-15 02:20:09 --> Cannot use object of type CodeIgniter\HTTP\IncomingRequest as array
+in APPPATH\Services\ProgramService.php on line 157.
+ 1 APPPATH\Services\ProgramService.php(97): App\Services\ProgramService->validateProgramUpdate(Object(CodeIgniter\HTTP\IncomingRequest))
+ 2 APPPATH\Controllers\ProgramController.php(58): App\Services\ProgramService->updateProgram(Object(CodeIgniter\HTTP\IncomingRequest))
+ 3 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\ProgramController->update()
+ 4 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProgramController))
+ 5 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(68): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-05-15 02:29:01 --> "unique" is not a valid rule.
+in SYSTEMPATH\Validation\Validation.php on line 320.
+ 1 SYSTEMPATH\Validation\Validation.php(320): CodeIgniter\Validation\Exceptions\ValidationException::forRuleNotFound('unique')
+ 2 SYSTEMPATH\Validation\Validation.php(170): CodeIgniter\Validation\Validation->processRules('name_program', 'name_program', 'Lịch học từ 24/4/2023 đến 28/4/2023', [...], [...])
+ 3 APPPATH\Services\ProgramService.php(91): CodeIgniter\Validation\Validation->run()
+ 4 APPPATH\Services\ProgramService.php(31): App\Services\ProgramService->validateProgramInfo(Object(CodeIgniter\HTTP\IncomingRequest))
+ 5 APPPATH\Controllers\ProgramController.php(43): App\Services\ProgramService->createProgram(Object(CodeIgniter\HTTP\IncomingRequest))
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\ProgramController->create()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProgramController))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(68): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-05-15 07:04:12 --> Call to a member function first() on array
+in APPPATH\Services\ProgramService.php on line 60.
+ 1 APPPATH\Controllers\ProgramController.php(43): App\Services\ProgramService->createProgram(Object(CodeIgniter\HTTP\IncomingRequest))
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\ProgramController->create()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProgramController))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(68): CodeIgniter\CodeIgniter->run()

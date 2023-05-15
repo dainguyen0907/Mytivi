@@ -36,7 +36,11 @@
                                         <?= $program["link_program"] ?>
                                     </td>
                                     <td class="text-center">
-                                        <a href="comment-edit.html" class="btn btn-primary"><i class="fas fa-edit"></i></a>
+                                        <a href="" class="btn btn-primary" data-toggle="modal" data-target="#updateProgramModal" 
+                                        data-idprogram="<?= $program["id_program"] ?>"
+                                        data-nameprogram="<?= $program["name_program"] ?>"
+                                        data-idcatalogue="<?= $program["id_catalogue"] ?>"
+                                        data-linkprogram="<?= $program["link_program"] ?>"]><i class="fas fa-edit"></i></a>
                                         <a data-url="" class="btn btn-danger btn-del-confirm text-light" data-toggle="modal" data-target="#deleteProgramModal" data-idprogram="<?= $program["id_program"] ?>"]><i
                                                 class="far fa-trash-alt"></i></a>
                                     </td>
@@ -50,3 +54,4 @@
     </div>
 </main>
 <?= view('popups/deleteProgram')?>
+<?= view('popups/updateProgram')?>
