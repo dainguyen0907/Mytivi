@@ -1,0 +1,35 @@
+CRITICAL - 2023-05-16 00:55:44 --> Assignments can only happen to writable values
+in APPPATH\Controllers\ScheduleController.php on line 31.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2023-05-16 02:09:00 --> Undefined variable $programs
+in APPPATH\Views\popups\updateSchedule.php on line 20.
+ 1 APPPATH\Views\popups\updateSchedule.php(20): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $programs', 'C:\\xampp\\htdocs\\Mytivi\\app\\Views\\popups\\updateSchedule.php', 20)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\Mytivi\\app\\Views\\popups\\updateSchedule.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('popups/updateSchedule', [], true)
+ 5 APPPATH\Views\pages\schedule-list.php(58): view('popups/updateSchedule')
+ 6 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\Mytivi\\app\\Views\\pages\\schedule-list.php')
+ 7 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('pages/schedule-list', [], true)
+ 9 APPPATH\Controllers\BaseController.php(65): view('pages/schedule-list', [...])
+10 APPPATH\Controllers\ScheduleController.php(22): App\Controllers\BaseController->loadMasterLayout([...], 'Lịch chiếu', 'pages/schedule-list', [...], [...], [...])
+11 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\ScheduleController->index()
+12 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ScheduleController))
+13 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+14 FCPATH\index.php(68): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-05-16 02:09:26 --> Undefined variable $cata
+in APPPATH\Views\popups\updateSchedule.php on line 21.
+ 1 APPPATH\Views\popups\updateSchedule.php(21): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $cata', 'C:\\xampp\\htdocs\\Mytivi\\app\\Views\\popups\\updateSchedule.php', 21)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\Mytivi\\app\\Views\\popups\\updateSchedule.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('popups/updateSchedule', [], true)
+ 5 APPPATH\Views\pages\schedule-list.php(58): view('popups/updateSchedule')
+ 6 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\Mytivi\\app\\Views\\pages\\schedule-list.php')
+ 7 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('pages/schedule-list', [], true)
+ 9 APPPATH\Controllers\BaseController.php(65): view('pages/schedule-list', [...])
+10 APPPATH\Controllers\ScheduleController.php(23): App\Controllers\BaseController->loadMasterLayout([...], 'Lịch chiếu', 'pages/schedule-list', [...], [...], [...])
+11 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\ScheduleController->index()
+12 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ScheduleController))
+13 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+14 FCPATH\index.php(68): CodeIgniter\CodeIgniter->run()

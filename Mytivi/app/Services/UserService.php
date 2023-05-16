@@ -124,7 +124,7 @@ class UserService extends BaseService
             return [
                 'status' => ResultUtils::STATUS_CODE_ERR,
                 'messageCode' => ResultUtils::MESSAGE_CODE_ERR,
-                'messages' => []
+                'messages' => ['errors'=>$e->getMessage()]
             ];
         }
 

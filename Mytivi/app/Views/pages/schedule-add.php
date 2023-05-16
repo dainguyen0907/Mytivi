@@ -8,39 +8,42 @@
                         <div class="easion-card-icon">
                             <i class="fas fa-chart-bar"></i>
                         </div>
-                        <div class="easion-card-title"> Thông tin đánh giá</div>
+                        <div class="easion-card-title"> Thông tin lịch chiếu</div>
                     </div>
                     <div class="card-body ">
-                        <form action="admin/comment/create" method="post" enctype="multipart/form-data">
-                            <input name="id" hidden>
+                        <?= view('message/message')?>
+                        <form action="admin/schedule/create" method="post">
                             <div class="form-row">
                                 <div class="form-group col-md-6">
-                                    <label>Tên gói</label>
-                                    <input name="name" type="text" class="form-control"
-                                        placeholder="Nhập tên người đánh giá" required>
+                                    <label>Chương trình</label>
+                                    <select name="id_program" class="form-select" aria-label="Default select example">
+                                        <?php foreach ($programs as $program): ?>
+                                            <option value='<?=$program['id_program']?>'><?=$program['name_program']?></option>
+                                        <?php endforeach; ?>
+                                    </select>
                                 </div>
                                 <div class="form-group col-md-6">
-                                    <label>Địa chỉ</label>
-                                    <input name="address" type="text" class="form-control" placeholder="Nhập địa chỉ"
-                                        required>
+                                    <label>Độ ưu tiên</label>
+                                    <select name="priority" class="form-select" aria-label="Default select example">
+                                        <option value='1'>Cao nhất</option>
+                                        <option value='2'>Trung bình</option>
+                                        <option value='3'>Thấp</option>
+                                    </select>
                                 </div>
                             </div>
                             <div class="form-row">
-                                <div class="form-group col-md-12">
-                                    <label>Nội dung</label>
-                                    <textarea name="content" class="form-control" rows="3"
-                                        placeholder="Nhập nội dung đánh giá" required>content</textarea>
+                                <div class="form-group col-md-6">
+                                    <label>Thời gian bắt đầu</label>
+                                    <input name="time_start" type="time" class="form-control"
+                                        placeholder="Thời gian bắt đầu" required>
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label>Thời gian kết thúc</label>
+                                    <input name="time_end" type="time" class="form-control"
+                                        placeholder="Thời gian kết thúc" required>
                                 </div>
                             </div>
-                            <div class="form-group">
-                                <label for="input-choose-image">Hình đại diện</label>
-                                <input name="img" type="file" accept="image/*" class="form-control-file"
-                                    id="input-choose-image" required>
-                            </div>
-                            <div class="form-group">
-                                <img id="img-show" src="" class="img-fluid" alt="Hình đại diện." style="display: none;">
-                            </div>
-                            <button type="submit" class="btn btn-success">Đăng ký</button>
+                            <button type="submit" class="btn btn-success">Tạo mới</button>
                             <button type="reset" class="btn btn-secondary">Nhập lại</button>
                         </form>
                     </div>

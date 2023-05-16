@@ -54,7 +54,7 @@
                                 <input name="video" type="file" accept="video/*" class="form-control-file"
                                     id="input-choose-video" required size="200">
                             </div>
-                            <button type="submit" class="btn btn-success">Đăng ký</button>
+                            <button type="submit" class="btn btn-success">Tạo mới</button>
                             <button type="reset" class="btn btn-secondary">Nhập lại</button>
                         </form>
                     </div>

@@ -9,6 +9,7 @@
                     <div class="easion-card-title">Lịch chiếu</div>
                 </div>
                 <div class="card-body ">
+                    <?= view('message/message') ?>
                     <table id="datatable" class="cell-border">
                         <thead>
                             <tr>
@@ -39,8 +40,15 @@
                                         <?= $schedule['priority'] ?>
                                     </td>
                                     <td class="text-center">
-                                        <a href="comment-edit.html" class="btn btn-primary"><i class="fas fa-edit"></i></a>
-                                        <a data-url="" class="btn btn-danger btn-del-confirm"><i
+                                        <a href="comment-edit.html" class="btn btn-primary" data-toggle="modal" 
+                                        data-target="#updateScheduleModal"
+                                        data-idschedule="<?= $schedule['id_schedule']?>"
+                                        data-idprogram="<?= $schedule['id_program']?>"
+                                        data-timestart="<?= $schedule['time_start']?>"
+                                        data-timeend="<?= $schedule['time_end']?>"
+                                        data-priority="<?= $schedule['priority']?>"><i class="fas fa-edit"></i></a>
+                                        <a data-url="" class="btn btn-danger btn-del-confirm text-light" data-toggle="modal" 
+                                        data-target="#deleteScheduleModal" data-idschedule="<?= $schedule['id_schedule']?>"><i
                                                 class="far fa-trash-alt"></i></a>
                                     </td>
                                 </tr>
@@ -52,3 +60,5 @@
         </div>
     </div>
 </main>
+<?= view('popups/updateSchedule')?>
+<?= view('popups/deleteSchedule')?>

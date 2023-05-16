@@ -27,24 +27,33 @@ $routes->set404Override();
 
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
+$routes->get('api','ApiController::index');
 $routes->get('login', 'LoginController::index');
 $routes->post('login', 'LoginController::login');
 $routes->get('logout','LoginController::logout');
 $routes->group('admin',  ['filter' => 'adminFilter'],function($routes){
+    //Home Page
     $routes->get('/', 'HomeController::index');
+    //Manage User Account
     $routes->get('user', 'UserController::index');
     $routes->get('user/add', 'UserController::addPage');
     $routes->post('user/create', 'UserController::create');
     $routes->post('user/update', 'UserController::update');
     $routes->post('user/delete', 'UserController::delete');
+    //Contact page
     $routes->get('contact', 'ContactController::index');
+    // Manage Program
     $routes->get('program', 'ProgramController::index');
-    $routes->post('program/create', 'ProgramController::create');
     $routes->get('program/add', 'ProgramController::addPage');
+    $routes->post('program/create', 'ProgramController::create');
     $routes->post('program/delete', 'ProgramController::delete');
     $routes->post('program/update', 'ProgramController::update');
+    //Manage Schedule
     $routes->get('schedule', 'ScheduleController::index');
     $routes->get('schedule/add', 'ScheduleController::addPage');
+    $routes->post('schedule/create', 'ScheduleController::create');
+    $routes->post('schedule/update', 'ScheduleController::update');
+    $routes->post('schedule/delete', 'ScheduleController::delete');
 });
 
 /*
