@@ -27,7 +27,7 @@ $routes->set404Override();
 
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
-$routes->get('api','ApiController::index');
+$routes->post('api','ApiController::index');
 $routes->get('login', 'LoginController::index');
 $routes->post('login', 'LoginController::login');
 $routes->get('logout','LoginController::logout');

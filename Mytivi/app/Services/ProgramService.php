@@ -5,17 +5,20 @@ namespace App\Services;
 use App\Common\ResultUtils;
 use App\Models\ProgramModel;
 use App\Models\ScheduleModel;
+use App\Services\ScheduleService;
 use Exception;
 
 class ProgramService extends BaseService
 {
     private $program;
     private $schedule;
+    private $scheduleService;
     function __construct()
     {
         parent::__construct();
         $this->program = new ProgramModel();
         $this->schedule = new ScheduleModel();
+        $this->scheduleService=new ScheduleService();
 
         $this->program->protect(false);
         $this->schedule->protect(false);
@@ -42,29 +45,36 @@ class ProgramService extends BaseService
             $info = $rqData->getPost();
             $files = $rqData->getFile('video');
             $newFileName = $files->getRandomName();
-            $Param = [
-                'name_program' => $info['name_program'],
-                'id_catalogue' => $info['id_catalogue'],
-            ];
-            if (!$files->hasMoved()) {
-                $files->move('uploads/', $newFileName);
-
-                $Param['link_program'] = base_url() . 'uploads/' . $newFileName;
+            if($this->scheduleService->checkScheduleTime($info['time_start'],$info['priority'])['status']===ResultUtils::STATUS_CODE_OK)
+            {
+                $Param = [
+                    'name_program' => $info['name_program'],
+                    'id_catalogue' => $info['id_catalogue'],
+                ];
+                if (!$files->hasMoved()) {
+                    $files->move('uploads/', $newFileName);
+    
+                    $Param['link_program'] = base_url() . 'uploads/' . $newFileName;
+                }
+                $this->program->save($Param);
+    
+                $Param_schedule=[
+                    'time_start'=>$info['time_start'],
+                    'time_end'=>$info['time_end'],
+                    'priority'=>$info['priority'],
+                    'id_program'=>$this->program->orderBy('id_program','DESC')->first()['id_program']
+                ];
+                $this->schedule->save($Param_schedule);
+                return [
+                    'status' => ResultUtils::STATUS_CODE_OK,
+                    'messageCode' => ResultUtils::MESSAGE_CODE_OK,
+                    'messages' => ['success' => 'Thêm chương trình mới thành công']
+                ];
             }
-            $this->program->save($Param);
-
-            $Param_schedule=[
-                'time_start'=>$info['time_start'],
-                'time_end'=>$info['time_end'],
-                'priority'=>$info['priority'],
-                'id_program'=>$this->program->orderBy('id_program','DESC')->first()['id_program']
-            ];
-            $this->schedule->save($Param_schedule);
-            return [
-                'status' => ResultUtils::STATUS_CODE_OK,
-                'messageCode' => ResultUtils::MESSAGE_CODE_OK,
-                'messages' => ['success' => 'Thêm chương trình mới thành công']
-            ];
+            else
+            {
+                return $this->scheduleService->checkScheduleTime($info['time_start'],$info['priority']);
+            }
         } catch (Exception $e) {
             return [
                 'status' => ResultUtils::STATUS_CODE_ERR,

@@ -17,7 +17,7 @@ class App extends BaseConfig
      *
      *    http://example.com/
      */
-    public string $baseURL = 'http://10.168.2.96/Mytivi/public';
+    public string $baseURL = 'http://localhost/Mytivi/public';
 
     /**
      * Allowed Hostnames in the Site URL other than the hostname in the baseURL.

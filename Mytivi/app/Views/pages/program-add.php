@@ -40,11 +40,11 @@
                                         placeholder="Thời gian kết thúc" required>
                                 </div>
                                 <div class="form-group col-md-4">
-                                    <label>Độ ưu tiên</label>
+                                    <label>Kênh</label>
                                     <select name="priority"class="form-select" aria-label="Default select example">
-                                        <option value='1'>Cao nhất</option>
-                                        <option value='2'>Trung bình</option>
-                                        <option value='3'>Thấp</option>
+                                        <option value='1'>Kênh 1</option>
+                                        <option value='2'>Kênh 2</option>
+                                        <option value='3'>Kênh 3</option>
                                     </select>
                                 </div>
                             </div>

@@ -16,7 +16,7 @@ class ApiController extends BaseController
 
     function index()
     {
-        return $this->respond($this->schedule->getScheduleApi());
+        return $this->respond($this->schedule->getScheduleApi($this->request));
     }
 
 

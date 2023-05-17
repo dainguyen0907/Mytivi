@@ -17,7 +17,7 @@
                                 <th scope="col">Tên chương trình</th>
                                 <th scope="col">Thời gian phát</th>
                                 <th scope="col">Thời gian kết thúc</th>
-                                <th scope="col">Độ ưu tiên</th>
+                                <th scope="col">Kênh</th>
                                 <th scope="col">Chức năng</th>
                             </tr>
                         </thead>

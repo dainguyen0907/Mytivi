@@ -36,7 +36,7 @@ class ScheduleService extends BaseService
         }
 
         $data = $rqData->getPost();
-        if ($this->checkScheduleTime($data['time_start'])['status'] === ResultUtils::STATUS_CODE_OK) {
+        if ($this->checkScheduleTime($data['time_start'],$data['priority'])['status'] === ResultUtils::STATUS_CODE_OK) {
             try {
                 $this->schedule->save($data);
                 return [
@@ -53,7 +53,7 @@ class ScheduleService extends BaseService
             }
 
         } else {
-            return $this->checkScheduleTime($data['time_start']);
+            return $this->checkScheduleTime($data['time_start'],$data['priority']);
         }
 
     }
@@ -71,7 +71,7 @@ class ScheduleService extends BaseService
         }
 
         $data = $rqData->getPost();
-        if ($this->checkScheduleTime($data['time_start'])['status'] === ResultUtils::STATUS_CODE_OK) {
+        if ($this->checkScheduleTime($data['time_start'],$data['priority'])['status'] === ResultUtils::STATUS_CODE_OK) {
             try {
                 $param=[
                     'id_schedule'=>$data['id_schedule'],
@@ -95,7 +95,7 @@ class ScheduleService extends BaseService
             }
 
         } else {
-            return $this->checkScheduleTime($data['time_start']);
+            return $this->checkScheduleTime($data['time_start'],$data['priority']);
         }
 
     }
@@ -127,9 +127,9 @@ class ScheduleService extends BaseService
         $this->validation->withRequest($rqData)->run();
         return $this->validation;
     }
-    function checkScheduleTime($time_start)
+    function checkScheduleTime($time_start,$priority)
     {
-        if ($this->schedule->where(['time_start <' => $time_start, 'time_end >' => $time_start, 'priority' => '1'])->first()) {
+        if ($this->schedule->where(['time_start <' => $time_start, 'time_end >' => $time_start, 'priority' => $priority])->first()) {
             return [
                 'status' => ResultUtils::STATUS_CODE_ERR,
                 'messageCode' => ResultUtils::MESSAGE_CODE_ERR,
@@ -165,9 +165,10 @@ class ScheduleService extends BaseService
 
     }
 
-    function getScheduleApi()
+    function getScheduleApi($rqData)
     {
-        return $this->schedule->join('programs','schedule.id_program=programs.id_program')->orderBy('time_start','ASC')->findAll();
+        $data=$rqData->getPost();
+        return $this->schedule->join('programs','schedule.id_program=programs.id_program')->where('priority',$data['priority'])->orderBy('time_start','ASC')->findAll();
     }
 
 }
