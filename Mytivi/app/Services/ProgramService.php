@@ -231,5 +231,9 @@ class ProgramService extends BaseService
         }
     }
 
+    function countProgram()
+    {
+        return count($this->program->findAll());
+    }
 
 }

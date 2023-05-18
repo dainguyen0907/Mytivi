@@ -97,6 +97,31 @@ class UserService extends BaseService
     /**
      * Dùng admin đổi mật khẩu
      * * */
+
+    function updateUserPasswordWithAuth($user_id, $rqData)
+    {
+        $validate = $this->validatePassword($rqData);
+
+        if ($validate->getErrors()) {
+            return $validate->getErrors();
+        }
+        $data = $rqData->getPost();
+        $query = $this->user->where('user_id', $user_id)->first();
+        if ($query) {
+            if (password_verify($data['oldpassword'], $query['user_password'])) {
+                $dataSave = $rqData->getPost();
+                $dt = [
+                    'user_id' => $user_id,
+                    'user_password' => password_hash($dataSave['password'], PASSWORD_BCRYPT)
+                ];
+                $this->user->save($dt);
+                return "Success";
+            } else {
+                return "WrongPassword";
+            }
+        }
+        return "AuthMissing";
+    }
     function updateUserPass($rqData)
     {
         $validate = $this->validatePassword($rqData);
@@ -124,7 +149,7 @@ class UserService extends BaseService
             return [
                 'status' => ResultUtils::STATUS_CODE_ERR,
                 'messageCode' => ResultUtils::MESSAGE_CODE_ERR,
-                'messages' => ['errors'=>$e->getMessage()]
+                'messages' => ['errors' => $e->getMessage()]
             ];
         }
 
@@ -190,19 +215,17 @@ class UserService extends BaseService
                 'messages' => $validate->getErrors()
             ];
         }
-        $param=$rqData->getPost();
-        $result= $this->user->where('user_name',$param['account'])->first();
-        if($result)
-        {
-            if(!password_verify($param['password'],$result['user_password']))
-            {
+        $param = $rqData->getPost();
+        $result = $this->user->where('user_name', $param['account'])->first();
+        if ($result) {
+            if (!password_verify($param['password'], $result['user_password'])) {
                 return [
                     'status' => ResultUtils::STATUS_CODE_ERR,
                     'messageCode' => ResultUtils::MESSAGE_CODE_ERR,
                     'messages' => ['wrongPass' => 'Mật khẩu chưa chính xác']
                 ];
             }
-            session()->set('userSession',$result);
+            session()->set('userSession', $result);
             return [
                 'status' => ResultUtils::STATUS_CODE_OK,
                 'messageCode' => ResultUtils::MESSAGE_CODE_OK,
@@ -239,5 +262,14 @@ class UserService extends BaseService
 
         return $this->validation;
     }
+
+    function countUser()
+    {
+        return count($this->user->findAll());
+    }
+
+
+
+
 
 }

@@ -67,43 +67,6 @@
             </div>
         </div>
 
-        <div class="row">
-            <div class="col-lg-12">
-                <nav aria-label="Page navigation example">
-                    <ul class="pagination justify-content-center">
-                        <li class="page-item">
-                            <a class="page-link fas fa-angle-double-left" href=""></a>
-                        </li>
-                        <li class="page-item">
-                            <a class="page-link fas fa-angle-left" href=""></a>
-                        </li>
-                        <li class="page-item">
-                            <a class="page-link" href="javascript::void(0)">...</a>
-                        </li>
-                        <li class="page-item">
-                            <a class="page-link" href="">1</a>
-                        </li>
-                        <li class="page-item">
-                            <a class="page-link" href="">2</a>
-                        </li>
-                        <li class="page-item active">
-                            <a class="page-link" href="">3</a>
-                        </li>
-                        <li class="page-item">
-                            <a class="page-link" href="">4</a>
-                        </li>
-                        <li class="page-item">
-                            <a class="page-link" href="javascript::void(0)">...</a>
-                        </li>
-                        <li class="page-item">
-                            <a class="page-link fas fa-angle-right" href=""></a>
-                        </li>
-                        <li class="page-item">
-                            <a class="page-link fas fa-angle-double-right" href=""></a>
-                        </li>
-                    </ul>
-                </nav>
-            </div>
-        </div>
+        
     </div>
 </main>
