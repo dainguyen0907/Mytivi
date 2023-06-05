@@ -36,7 +36,7 @@ class ScheduleService extends BaseService
         }
 
         $data = $rqData->getPost();
-        if ($this->checkScheduleTime($data['time_start'],$data['priority'])['status'] === ResultUtils::STATUS_CODE_OK) {
+        if ($this->checkScheduleTime($data['time_start'],$data['priority'],null)['status'] === ResultUtils::STATUS_CODE_OK) {
             try {
                 $this->schedule->save($data);
                 return [
@@ -53,7 +53,7 @@ class ScheduleService extends BaseService
             }
 
         } else {
-            return $this->checkScheduleTime($data['time_start'],$data['priority']);
+            return $this->checkScheduleTime($data['time_start'],$data['priority'],null);
         }
 
     }
@@ -71,7 +71,7 @@ class ScheduleService extends BaseService
         }
 
         $data = $rqData->getPost();
-        if ($this->checkScheduleTime($data['time_start'],$data['priority'])['status'] === ResultUtils::STATUS_CODE_OK) {
+        if ($this->checkScheduleTime($data['time_start'],$data['priority'],$data['id_schedule'])['status'] === ResultUtils::STATUS_CODE_OK) {
             try {
                 $param=[
                     'id_schedule'=>$data['id_schedule'],
@@ -95,7 +95,7 @@ class ScheduleService extends BaseService
             }
 
         } else {
-            return $this->checkScheduleTime($data['time_start'],$data['priority']);
+            return $this->checkScheduleTime($data['time_start'],$data['priority'],$data['id_schedule']);
         }
 
     }
@@ -127,9 +127,14 @@ class ScheduleService extends BaseService
         $this->validation->withRequest($rqData)->run();
         return $this->validation;
     }
-    function checkScheduleTime($time_start,$priority)
+    function checkScheduleTime($time_start,$priority,$id_schedule)
     {
-        if ($this->schedule->where(['time_start <' => $time_start, 'time_end >' => $time_start, 'priority' => $priority])->first()) {
+        $result=$this->schedule->where(['time_start <=' => $time_start, 'time_end >' => $time_start, 'priority' => $priority])->first();
+        if($id_schedule!=null)
+        {
+            $result=$this->schedule->where(['time_start <=' => $time_start, 'time_end >' => $time_start, 'priority' => $priority, 'id_schedule!='=>$id_schedule])->first();
+        }
+        if ($result) {
             return [
                 'status' => ResultUtils::STATUS_CODE_ERR,
                 'messageCode' => ResultUtils::MESSAGE_CODE_ERR,

@@ -45,7 +45,7 @@ class ProgramService extends BaseService
             $info = $rqData->getPost();
             $files = $rqData->getFile('video');
             $newFileName = $files->getRandomName();
-            if($this->scheduleService->checkScheduleTime($info['time_start'],$info['priority'])['status']===ResultUtils::STATUS_CODE_OK)
+            if($this->scheduleService->checkScheduleTime($info['time_start'],$info['priority'],null)['status']===ResultUtils::STATUS_CODE_OK)
             {
                 $Param = [
                     'name_program' => $info['name_program'],
@@ -73,7 +73,7 @@ class ProgramService extends BaseService
             }
             else
             {
-                return $this->scheduleService->checkScheduleTime($info['time_start'],$info['priority']);
+                return $this->scheduleService->checkScheduleTime($info['time_start'],$info['priority'],null);
             }
         } catch (Exception $e) {
             return [
